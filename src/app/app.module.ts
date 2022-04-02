@@ -6,11 +6,15 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomeComponent} from './home/home.component';
 import {SharedModule} from "./shared/shared.module";
+import { PostListComponent } from './home/post-list/post-list.component';
+import { PostRowComponent } from './home/post-list/post-row/post-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PostListComponent,
+    PostRowComponent
   ],
   imports: [
     BrowserModule,
