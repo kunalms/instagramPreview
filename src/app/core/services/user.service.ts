@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPostsForUser(): Observable<InstagramPost>{
-    return this.httpClient.get<InstagramPost>(this.INSTAGRAM_POST_API);
+  getPostsForUser(): Observable<InstagramPost[]>{
+    return this.httpClient.get<InstagramPost[]>(this.INSTAGRAM_POST_API);
   }
 }
