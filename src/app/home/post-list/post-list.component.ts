@@ -42,6 +42,28 @@ export class PostListComponent implements OnInit {
         // a must be equal to b
         return 0;
       }
+
+      if (this.sortBy === 'timestamp_asc') {
+        if (post1.timestamp < post2.timestamp) {
+          return -1;
+        }
+        if (post1.timestamp > post2.timestamp) {
+          return 1;
+        }
+        // a must be equal to b
+        return 0;
+      }
+
+      if (this.sortBy === 'timestamp_desc') {
+        if (post1.timestamp > post2.timestamp) {
+          return -1;
+        }
+        if (post1.timestamp < post2.timestamp) {
+          return 1;
+        }
+        // a must be equal to b
+        return 0;
+      }
       return 0;
     });
   }

@@ -1,10 +1,12 @@
-<div fxLayoutAlign="end">
+<div fxLayoutAlign="end" class="sort-by-filter">
   <mat-form-field appearance="fill">
     <mat-label>Sort By</mat-label>
     <mat-select (selectionChange)="sortPosts()" [(value)]="sortBy">
       <mat-option [value]="''">Default Order</mat-option>
       <mat-option value="likes_asc">Sort By Likes Ascending</mat-option>
       <mat-option value="likes_desc">Sort By Likes Descending</mat-option>
+      <mat-option value="timestamp_asc">Sort By Posted Date Ascending</mat-option>
+      <mat-option value="timestamp_desc">Sort By Posted Date Descending</mat-option>
     </mat-select>
   </mat-form-field>
 </div>
