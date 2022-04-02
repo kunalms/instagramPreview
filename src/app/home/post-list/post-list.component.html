@@ -1,1 +1,3 @@
-<p>post-list works!</p>
+<div *ngFor="let post of userPosts" class="post-list-container">
+  <app-post-row [post]="post"></app-post-row>
+</div>

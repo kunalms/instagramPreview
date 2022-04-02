@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from "../../core/services/user.service";
+import {InstagramPost} from "../../shared/models/instagram-post";
 
 @Component({
   selector: 'app-post-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+  public userPosts: InstagramPost[] = [];
+
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
+    this.userService.getPostsForUser().subscribe(posts => this.userPosts = posts);
   }
 
 }
