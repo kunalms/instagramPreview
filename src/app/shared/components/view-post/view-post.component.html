@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>View Post</h2>
+<mat-dialog-content class="mat-typography" fxLayoutAlign="start center" fxLayout="column" fxLayoutGap="8px">
+  <img class="post-image" [src]="post.Image" alt="Post Image">
+
+  <div fxLayout="row" fxLayoutAlign="space-between" class="post-metadata">
+    <div *ngIf="post.isLiked" fxLayoutAlign="start center" fxLayoutGap="8px">
+      <mat-icon color="accent">favorite</mat-icon>
+      <span>{{post?.likes}}</span>
+    </div>
+    <div  *ngIf="!post.isLiked" fxLayoutAlign="start center" fxLayoutGap="8px">
+      <mat-icon color="accent">favorite_border</mat-icon>
+      <span>{{post?.likes}}</span>
+    </div>
+    <div fxLayoutAlign="start center" fxLayoutGap="8px">
+      <mat-icon color="primary">event</mat-icon>
+      <span>{{post?.timestamp}}</span>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button *ngIf="!post.isLiked" mat-button (click)="likePost()" cdkFocusInitial>Like Post</button>
+  <button *ngIf="post.isLiked" mat-button (click)="unLikePost()" cdkFocusInitial>Unlike Post</button>
+</mat-dialog-actions>
