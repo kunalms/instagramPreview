@@ -10,6 +10,8 @@ import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
 import { ViewPostComponent } from './components/view-post/view-post.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports: [
     FlexLayoutModule,
@@ -37,7 +41,9 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class SharedModule {
