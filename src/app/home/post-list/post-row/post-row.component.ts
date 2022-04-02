@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {InstagramPost} from "../../../shared/models/instagram-post";
+import {ViewPostDialogService} from "../../../core/services/view-post-dialog.service";
 
 @Component({
   selector: 'app-post-row',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostRowComponent implements OnInit {
 
-  constructor() { }
+  @Input() post: null | InstagramPost = null;
+
+  constructor(private viewPostDialogService: ViewPostDialogService) {
+  }
 
   ngOnInit(): void {
   }
 
+  openViewPostDialog(post: InstagramPost | null) {
+    this.viewPostDialogService.openDialog(post)
+      .afterClosed()
+      .subscribe((updatedPost: InstagramPost) => {
+        post = updatedPost;
+      });
+  }
 }
