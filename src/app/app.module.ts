@@ -8,6 +8,7 @@ import {HomeComponent} from './home/home.component';
 import {SharedModule} from "./shared/shared.module";
 import { PostListComponent } from './home/post-list/post-list.component';
 import { PostRowComponent } from './home/post-list/post-row/post-row.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PostRowComponent } from './home/post-list/post-row/post-row.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule
   ],
   providers: [],
