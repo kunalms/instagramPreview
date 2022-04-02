@@ -1,0 +1,14 @@
+.post-card {
+  &:hover {
+    background-color: var(--primary-lighter-color);
+    cursor: pointer;
+  }
+}
+
+.post-header-image {
+  background-size: cover;
+}
+
+.mat-card-subtitle {
+  margin-bottom: 0;
+}

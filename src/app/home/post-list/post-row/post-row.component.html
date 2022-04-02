@@ -1,1 +1,11 @@
-<p>post-row works!</p>
+<mat-card class="post-card" (click)="openViewPostDialog(post)">
+  <mat-card-header>
+    <div mat-card-avatar class="post-header-image" [ngStyle]="{'background-image': 'url(' + post?.Image + ')'}"></div>
+    <mat-card-title>Posted on: {{post?.timestamp}} </mat-card-title>
+    <mat-card-subtitle fxLayoutAlign="start center" fxLayoutGap="4px">
+      <mat-icon *ngIf="post?.isLiked" color="accent">favorite</mat-icon>
+      <span>Likes: {{post?.likes}}</span>
+    </mat-card-subtitle>
+
+  </mat-card-header>
+</mat-card>
